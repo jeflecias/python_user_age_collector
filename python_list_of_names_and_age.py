@@ -20,13 +20,22 @@ while if_continue == "yes":
     # ask the user for name
     name = input("Please enter a name. ")
 
+    # check if name is valid
+    while not check_special_char(name):
+        name = input("Name must not have special characters! ")
+    
     # ask the user for age, then convert string to integer
-    age = int(input("Please enter your age. "))
+    try:
+        age = int(input("Please enter your age. "))
+    except:
+        age = int(input("Enter a valid number! "))
 
     # add the values to the dictionary
     names_list[name] = age
 
     # ask the user to continue adding names and ages
     if_continue = input("Continue? yes/no ")
+    while if_continue.lower() != "yes" and if_continue.lower() != "no":
+        if_continue = input("Continue? ONLY yes/no ")
 
 print(names_list)
