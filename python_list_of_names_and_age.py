@@ -30,6 +30,9 @@ while if_continue == "yes":
     # ask the user for age, then convert string to integer
     try:
         age = int(input("Please enter your age. "))
+        if age < 0:
+            raise
+
     except:
         age = int(input("Enter a valid number! "))
 
