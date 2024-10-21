@@ -1,6 +1,14 @@
 # PLD
 # this program asks the user to input a name and age, then adds their input to a dictionary
 
+# check if a name is valid (no special characters)
+def check_special_char(given):
+    special_characters = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~0123456789"
+    for i in given:
+        if i in special_characters:
+            return False
+    return True
+
 names_list = {}
 
 # variable to control the while loop
