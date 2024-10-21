@@ -44,4 +44,12 @@ while if_continue == "yes":
     while if_continue.lower() != "yes" and if_continue.lower() != "no":
         if_continue = input("Continue? ONLY yes/no ")
 
-print(names_list)
+# find the person with the highest age
+highest_age = 0
+name_with_highest_age = ""
+for n,a in names_list.items():
+    if a > highest_age:
+        highest_age = a
+        name_with_highest_age = n
+
+print("The person with the highest age is",name_with_highest_age,"with the age",highest_age)
