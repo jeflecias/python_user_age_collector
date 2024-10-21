@@ -24,6 +24,9 @@ while if_continue == "yes":
     while not check_special_char(name):
         name = input("Name must not have special characters! ")
     
+    # clear trailing and leading spaces in name
+    name = name.strip()
+    
     # ask the user for age, then convert string to integer
     try:
         age = int(input("Please enter your age. "))
