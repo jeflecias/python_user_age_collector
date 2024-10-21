@@ -30,11 +30,11 @@ while if_continue == "yes":
     # ask the user for age, then convert string to integer
     try:
         age = int(input("Please enter your age. "))
-        if age < 0:
+        if age < 0 or age > 120:
             raise
 
     except:
-        age = int(input("Enter a valid number! "))
+        age = int(input("Enter a valid age! (years old) "))
 
     # add the values to the dictionary
     names_list[name] = age
@@ -52,4 +52,4 @@ for n,a in names_list.items():
         highest_age = a
         name_with_highest_age = n
 
-print("The person with the highest age is",name_with_highest_age,"with the age",highest_age)
+print(f"The person with the highest age is {name_with_highest_age}, who is {highest_age} years old.")
