@@ -28,13 +28,15 @@ while if_continue == "yes":
     name = name.strip()
     
     # ask the user for age, then convert string to integer
-    try:
-        age = int(input("Please enter your age. "))
-        if age < 0 or age > 120:
-            raise
 
-    except:
-        age = int(input("Enter a valid age! (years old) "))
+    while True:
+        try:
+            age = int(input("Please enter your age. "))
+            if age < 0 or age > 120:
+                raise
+            break
+        except:
+            print("Please enter a valid age! ")
 
     # add the values to the dictionary
     names_list[name] = age
