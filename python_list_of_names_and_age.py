@@ -21,8 +21,8 @@ while if_continue == "yes":
     name = input("Please enter a name. ")
 
     # check if name is valid
-    while not check_special_char(name):
-        name = input("Name must not have special characters! ")
+    while not check_special_char(name) or name.strip() == "":
+        name = input("Enter a valid name! ")
     
     # clear trailing and leading spaces in name
     name = name.strip()
